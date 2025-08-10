@@ -18,7 +18,7 @@ export default function App() {
     if (!longUrl.trim()) return;
 
     try {
-      const res = await axios.post("http://localhost:5000/api/shorten", { originalUrl: longUrl });
+      const res = await axios.post("https://urlsortner-1.onrender.com/api/shorten", { originalUrl: longUrl });
       setShortUrl(res.data.shortUrl);
 
       const updated = [{ longUrl, shortUrl: res.data.shortUrl }, ...history];
