@@ -8,7 +8,10 @@ import Url from "./models/Url.js";
 dotenv.config();
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: process.env.CORS_ORIGIN || "*", // Change to your frontend URL in production
+}));
+
 app.use(express.json());
 
 // Connect DB
